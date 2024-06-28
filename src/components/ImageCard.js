@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ImageCard({ items }) {
-const tags = items.tags.split(',')
+    const tags = items.tags.split(',')
 
     return (
         <div style={{ width: "35%", overflow: 'hidden', borderRadius: "10px", boxShadow: "0px 2px 10px black" }}>
@@ -20,7 +20,7 @@ const tags = items.tags.split(',')
                         {items.downloads}
                     </li>
                     <li>
-                        <strong>Likes: </strong>
+                        <strong className='text-white'>Likes: </strong>
                         {items.likes}
                     </li>
                 </ul>

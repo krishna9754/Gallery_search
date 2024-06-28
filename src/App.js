@@ -24,17 +24,22 @@ function App() {
 
   return (
     <div className="container">
+      <ImageSearch searchText={(text) => setTerm(text)} />
       {
-        loading ?<div style={{ justifyContent: "center", display: "flex", marginTop: "45%" }}><Loader /></div> :
-          <div style={{ display: "grid" }}>
-            <ImageSearch searchText={(text) => setTerm(text)} />
+        loading ?
+          <div style={{ justifyContent: "center", display: "flex", marginTop: "20%" }}>
+            <Loader />
+          </div>
+          :
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(500px, 4fr))", gap: "6px", justifyItems: "center" }}>
+
             {
               images.map(items => (
                 <ImageCard key={items.id} items={items} />
-              ))}
-          </div> 
+              ))
+            }
+          </div>
       }
-
     </div>
   );
 }
